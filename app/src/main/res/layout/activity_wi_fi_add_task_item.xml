@@ -1,0 +1,218 @@
+<ScrollView  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView">
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="800dp"
+        tools:context="com.cs683.atshudy.assistmode.views.WiFiAddTaskItem"
+        android:gravity="top"
+        android:id="@+id/wifiAddTaskItem">
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/enabled_sc"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:checked="true"
+            android:showText="true"
+            android:textOff="OFF"
+            android:textOn="ON"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/disable_timeout_sc"
+            android:layout_marginTop="55dp"
+            android:layout_below="@+id/enabled_sc"
+            android:layout_alignStart="@+id/enabled_sc"
+            android:checked="false"
+            android:showText="true"
+            android:textOff="OFF"
+            android:textOn="ON"/>
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/disable_wifi_lowBat_sc"
+            android:layout_alignBottom="@+id/textView3"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:showText="true"
+            android:textOff="OFF"
+            android:textOn="ON"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="  Connection Timeout"
+            android:id="@+id/textView2"
+            android:layout_alignBottom="@+id/disable_timeout_sc"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Low Battery Usage level"
+            android:id="@+id/textView3"
+            android:layout_marginTop="109dp"
+            android:layout_below="@+id/textView5"
+            android:layout_alignStart="@+id/spinnerWifiLocation" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:scaleType="fitXY"
+            android:src="?android:attr/listDivider"
+            android:layout_above="@+id/Location_enabled_sc"
+            android:layout_toEndOf="@+id/taskname_edt"
+            android:background="#A9A9A9"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:text="Location"
+            android:id="@+id/textView"
+            android:layout_marginTop="45dp"
+            android:layout_below="@+id/spinnerConnTimeout"
+            android:layout_toStartOf="@+id/cancel_btn" />
+
+        <Switch
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Off"
+            android:id="@+id/Location_enabled_sc"
+            android:layout_alignBottom="@+id/textView"
+            android:layout_alignParentEnd="true"
+            android:checked="false"
+            android:showText="true"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:layout_alignStart="@+id/disable_timeout_sc"
+            android:layout_alignTop="@+id/textView" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskname_edt"
+            android:focusable="true"
+            android:enabled="true"
+            android:textSize="14sp"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="bottom"
+            android:layout_above="@+id/disable_timeout_sc"
+            android:layout_alignStart="@+id/connect_desc_txt" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="The Connection timeout is defined as the amount of time the device tries to connect to an access point.   "
+            android:id="@+id/connect_desc_txt"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/textView2"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Set the device to disable Wi-Fi if your device is moved away from a set location "
+            android:id="@+id/textView5"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/textView"
+            android:layout_alignStart="@+id/textView" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="Set when the battery usage level is low"
+            android:id="@+id/textView6"
+            android:layout_marginRight="40dp"
+            android:layout_below="@+id/disable_wifi_lowBat_sc"
+            android:layout_marginTop="5dp"
+            android:layout_alignStart="@+id/textView3" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/ok_btn"
+            android:layout_marginTop="41dp"
+            android:layout_below="@+id/textView6"
+            android:layout_toEndOf="@+id/textView2" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancel_btn"
+            android:layout_alignTop="@+id/ok_btn"
+            android:layout_toStartOf="@+id/ok_btn" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:scaleType="fitXY"
+            android:src="?android:attr/listDivider"
+            android:background="#A9A9A9"
+            android:id="@+id/imageView"
+            android:layout_above="@+id/textView2"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp" />
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="25dp"
+            android:paddingBottom="2dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:paddingTop="2dp"
+            android:scaleType="fitXY"
+            android:src="?android:attr/listDivider"
+            android:background="#A9A9A9"
+            android:id="@+id/imageView2"
+            android:layout_above="@+id/disable_wifi_lowBat_sc"
+            android:layout_toEndOf="@+id/taskname_edt"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"
+            android:layout_alignParentStart="true" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerConnTimeout"
+            android:layout_below="@+id/connect_desc_txt"
+            android:layout_alignStart="@+id/connect_desc_txt"
+            android:layout_marginTop="29dp"
+            android:spinnerMode="dropdown" />
+
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerWifiLocation"
+            android:layout_above="@+id/imageView2"
+            android:layout_alignStart="@+id/textView5"
+            android:spinnerMode="dropdown" />
+
+    </RelativeLayout>
+</ScrollView>

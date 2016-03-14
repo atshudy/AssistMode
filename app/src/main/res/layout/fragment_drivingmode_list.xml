@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.cs683.atshudy.assistmode.views.DrivingModeFragment">
+
+    <ListView android:id="@+id/drivingList" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:headerDividersEnabled="false"
+        android:focusable="false" />
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Add"
+        android:id="@+id/add_btn"
+        android:layout_gravity="bottom"
+        style="@android:style/Widget.Button"
+        android:clickable="true"
+        android:gravity="center"
+        android:height="@dimen/abc_action_button_min_width_overflow_material"/>
+</FrameLayout>

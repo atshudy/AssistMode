@@ -1,0 +1,261 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/scrollView">
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        tools:context="com.cs683.atshudy.assistmode.views.SilentAddTaskItemActivity"
+        android:id="@+id/silent_add_task_layout">
+
+        <Switch
+            android:id="@+id/enable_sc"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_gravity="right"
+            android:showText="true"
+            android:textOff="OFF"
+            android:textOn="ON"
+            android:checked="true" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:scaleType="fitXY"
+            android:src="?android:attr/listDivider"
+            android:background="#A9A9A9"
+            android:id="@+id/imageView"
+            android:layout_below="@+id/enable_sc"
+            android:layout_alignParentStart="true" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="100dp"
+            android:id="@+id/myRadioGroup"
+            android:checkedButton="@+id/EnableCal"
+            android:layout_alignEnd="@+id/enable_sc"
+            android:layout_alignParentStart="false"
+            android:layout_alignTop="@+id/imageView">
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sync with Calendar"
+                android:id="@+id/EnableCal"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="true"
+                android:onClick="OnScheduleRadioButtonClick" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fixed Schedule"
+                android:layout_marginTop="20dp"
+                android:id="@+id/EnableFixedSched"
+                android:onClick="OnScheduleRadioButtonClick"
+                android:checked="true" />
+
+        </RadioGroup>
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mon"
+            android:id="@+id/mon_chkbox"
+            android:checked="false"
+            android:layout_below="@+id/myRadioGroup" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tue"
+            android:id="@+id/tue_chkbox"
+            android:checked="false"
+            android:layout_alignParentEnd="false"
+            android:layout_below="@+id/mon_chkbox" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Wed"
+            android:id="@+id/wed_chkbox"
+            android:checked="false"
+            android:layout_below="@+id/tue_chkbox" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thu "
+            android:id="@+id/thu_chkbox"
+            android:checked="false"
+            android:layout_alignRight="@+id/mon_chkbox"
+            android:layout_below="@+id/wed_chkbox" />
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri"
+            android:id="@+id/fri_chkbox"
+            android:checked="false"
+            android:layout_toRightOf="@+id/mon_chkbox"
+            android:layout_alignTop="@+id/mon_chkbox"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sat "
+            android:id="@+id/sat_chkbox"
+            android:checked="false"
+            android:layout_below="@+id/fri_chkbox"
+            android:layout_alignEnd="@+id/sun_chkbox" />
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sun"
+            android:id="@+id/sun_chkbox"
+            android:checked="false"
+            android:layout_alignTop="@+id/wed_chkbox"
+            android:layout_toRightOf="@+id/wed_chkbox"
+            android:layout_alignParentStart="false"
+            android:layout_alignParentEnd="false" />
+
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:id="@+id/start_time_txt"
+            android:layout_below="@+id/sun_chkbox"
+            android:layout_toEndOf="@+id/sun_chkbox"
+            android:textSize="12sp"
+            android:gravity="bottom" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:text="to:"
+            android:id="@+id/toLabelLabel"
+            android:layout_toRightOf="@+id/start_time_txt"
+            android:layout_alignBottom="@+id/start_time_txt" />
+
+        <EditText
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:inputType="time"
+            android:id="@+id/end_time_text"
+            android:layout_above="@+id/starttime_btn"
+            android:layout_toEndOf="@+id/toLabelLabel"
+            android:textSize="12sp"
+            android:gravity="bottom" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start time"
+            android:id="@+id/starttime_btn"
+            android:layout_below="@+id/start_time_txt"
+            android:layout_alignEnd="@+id/toLabelLabel" />
+
+        <RadioGroup
+            android:layout_width="fill_parent"
+            android:layout_height="220dp"
+            android:layout_below="@+id/starttime_btn"
+            android:id="@+id/ModeRadioGroup"
+            android:checkedButton="@+id/EnableSilentMode"
+            android:layout_alignEnd="@+id/enable_sc">
+
+            <ImageView
+                android:layout_width="fill_parent"
+                android:layout_height="10dp"
+                android:paddingBottom="2dp"
+                android:paddingLeft="5dp"
+                android:paddingRight="5dp"
+                android:paddingTop="2dp"
+                android:scaleType="fitXY"
+                android:src="?android:attr/listDivider"
+                android:background="#A9A9A9"
+                android:id="@+id/imgView2"
+                android:layout_above="@+id/textView2"
+                android:layout_alignParentEnd="true" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Silent"
+                android:id="@+id/EnableSilentMode"
+                android:layout_marginTop="20dp"
+                android:layout_alignParentStart="true"
+                android:onClick="OnModeRadioButtonClick" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Volume"
+                android:layout_marginTop="20dp"
+                android:id="@+id/adjustVolume"
+                android:onClick="OnModeRadioButtonClick"
+                android:checked="true" />
+
+
+            <SeekBar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/seekBar"
+                android:splitTrack="false" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Vibrate"
+                android:layout_marginTop="20dp"
+                android:id="@+id/vibrateMode"
+                android:onClick="OnModeRadioButtonClick"
+                android:nestedScrollingEnabled="false" />
+
+
+
+        </RadioGroup>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="OK"
+            android:id="@+id/ok_btn"
+            android:layout_below="@+id/ModeRadioGroup"
+            android:layout_toStartOf="@+id/cancel_btn" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:id="@+id/cancel_btn"
+            android:layout_below="@+id/ModeRadioGroup"
+            android:layout_toEndOf="@+id/starttime_btn" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/taskname_txt"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignBottom="@+id/enable_sc"
+            android:layout_marginBottom="5dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Time"
+            android:id="@+id/endtime_btn"
+            android:layout_alignBottom="@+id/starttime_btn"
+            android:layout_alignStart="@+id/end_time_text" />
+
+    </RelativeLayout>
+</ScrollView>

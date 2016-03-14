@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:andriod="http://schemas.android.com/tools"
+    package="com.cs683.atshudy.assistmode">
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- Always required on api < 21, needed to keep a wake lock while your job is running -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <!-- Required on api < 21 if you are using setRequiredNetworkType(int) -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- Required on all api levels if you are using setPersisted(true) -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <activity
+            android:name=".views.MainActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".business.SilentModeService"
+            android:permission="android.permission.BIND_JOB_SERVICE"
+            android:enabled="true"
+            android:exported="true" />
+        <service
+            android:name=".business.DrivingModeService"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <service
+            android:name=".business.WiFiModeService"
+            android:process=":myProcess"
+            android:enabled="true"
+            android:exported="true" >
+        </service>
+        <activity
+            android:name=".views.SilentEditTaskItemActivity"
+            android:label="@string/title_activity_edit_task_item" >
+        </activity>
+        <activity
+            android:name=".views.SilentAddTaskItemActivity"
+            android:label="@string/title_activity_add_task_item" >
+        </activity>
+        <activity
+            android:name=".views.WiFiAddTaskItem"
+            android:label="@string/title_activity_wi_fi_add_task_item" >
+        </activity>
+        <activity
+            android:name=".views.WiFiEditTaskItem"
+            android:label="@string/title_activity_wi_fi_edit_task_item" >
+        </activity>
+        <activity
+            android:name=".views.DrivingAddTaskItem"
+            android:label="@string/title_activity_driving_add_task_item" >
+        </activity>
+        <activity
+            android:name=".views.DrivingEditTaskItem"
+            android:label="@string/title_activity_driving_edit_task_item" >
+        </activity>
+        <receiver android:name=".business.SilentModeBroadcastReceiver" android:enabled="true" android:process=":remote">
+            <intent-filter>
+                <action android:name="com.cs683.atshudy.assistmode.businessSilentModeBroadcastReceiver.add" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".business.DrivingModeBroadcastReceiver" android:enabled="true" android:process=":remote">
+            <intent-filter>
+                <action android:name="ACTIVITY_UPDATE_INTENT" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

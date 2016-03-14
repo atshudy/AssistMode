@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp"
+    tools:context=".Fragment" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Task Name"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:clickable="false"
+        android:layout_alignParentTop="true"
+        android:layout_toEndOf="@+id/taskImage"
+        android:paddingLeft="5dp" />
+    <ImageButton
+        android:id="@+id/editBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@drawable/greencheck"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Edit"
+        android:textColor="#0099CC"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/deleteBtn" />
+    <ImageButton
+        android:id="@+id/deleteBtn"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:background="@android:drawable/ic_delete"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
+        android:text="Delete"
+        android:textColor="#0099CC"
+        android:layout_alignTop="@+id/editBtn"
+        android:layout_alignParentEnd="true"
+        android:clickable="true" />
+
+    <ImageView
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:id="@+id/taskImage"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:background="@drawable/gear" />
+</RelativeLayout>

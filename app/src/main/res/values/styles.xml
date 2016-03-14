@@ -1,0 +1,12 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat">
+        <!-- Customize your theme here. -->
+        <item name="android:windowBackground">@drawable/my_gradient</item>
+        <item name="android:colorBackgroundCacheHint">@color/custom_dk_blue_color</item>
+        <item name="android:color">#FFFFFF</item>
+
+    </style>
+
+</resources>
